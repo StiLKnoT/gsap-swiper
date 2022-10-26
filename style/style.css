@@ -1,0 +1,283 @@
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+body{
+    height: 100%;
+    line-height: 1;
+    font-size: 14px;
+    background-color: #333; 
+}
+section{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(242,231,231);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.center_text{
+    padding: 3px 0;
+}
+h1{
+    font-size: 46px;
+    font-weight: lighter;
+}
+.main{
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.heading {
+    color: whitesmoke;
+    font-size: 2em;
+    width: 100%;
+}
+.addText{
+    opacity: 0;
+}
+ body{
+    overflow: hidden;
+}
+.heading__text__invise{
+    display: none;
+    overflow: hidden;
+}
+.heading__text__block{
+    display: inline-block;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: space-between;
+    color: rgb(8, 135, 163);
+    text-align: start;
+    overflow: hidden;
+    transition: 1s ease;
+    width: 100px;
+    height: 25px;
+    margin-left: 140px;
+}
+.list_text1, .list_text2, .list_text3, .list_text4{
+    opacity: 0;
+    transform: translateY(100%);
+    position: absolute;
+}
+.heading__text, h2{
+    overflow: hidden;
+    font-weight: bolder;
+    text-align: center;
+}
+.heading__text span {
+    display: inline-flex;
+    transform: translateY(100%);
+    color: #111;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    
+} 
+.center_text{
+    text-align: center !important;
+}
+.videoPlay{
+    display: none;
+    object-fit: cover;
+    width: 100%;
+    margin: 0 auto;
+    height: 100%;
+    transition: 1s ease;
+}
+.videoPlay img {
+    width: 320px;
+    height: 140px;
+    object-fit: cover;
+}
+.invisible{
+    display: none;
+}
+.fullscreen-bg {
+    overflow: hidden;
+    z-index: -100;
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    padding-top:45%;
+
+}
+.fullscreen-bg__video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
+.overlay {
+    background: rgba(0,0,0,0.6);
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    z-index: 4;
+}
+.overlay h1 {
+    text-align: center;
+    color:#fff;
+    font-size: 70px;
+    margin-top:17%;
+}
+.wrapper {
+    min-height: 100%;
+}
+.page{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+.page__wrapper{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+.screen{
+    flex: 1 0 100%;
+    position: relative;
+}
+.screen__content{
+    padding: 100px 25px 25px 25px;
+    position: relative;
+    z-index: 2;
+
+}
+.screen__title {
+    font-size: 36px;
+    color: #fff;
+    margin: 0px 0px 30px 0px;
+    display: inline-block;
+    z-index: 2;
+}
+.screen__title__bg {
+    background-color: rgba(0,0,0,0.5);
+    padding: 15px;
+}
+.screen__body {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.screen__image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+.screen__image img {
+    object-fit: cover;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+.screen__text {
+    font-size: 20px;
+    line-height: 130%;
+    color: #fff;
+}
+.screen__text p {
+    margin: 0px 0px 20px 0px;
+}
+.screen__text p:last-child {
+    margin-bottom: 0px;
+}
+img{
+    vertical-align: top;
+}
+.page__pagination {
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    transform: translate(0px, -50%);
+    display: flex;
+    flex-direction: column;
+}
+.page__bullet {
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+    border: 1px solid #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin: 5px 0;
+    border-radius: 50%;
+    transition: background-color 0.3s ease 0s;
+    
+}
+.swiper-pagination-bullet-active {
+    background-color: #fff;
+}
+.page__scroll {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 4px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+.page__drag-scroll {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    cursor: pointer;
+}
+
+@media (max-width: 767px) {
+    .fullscreen-bg {
+        background: url('../images/plane.jpg') center center / cover no-repeat;
+    }
+    .videoPlay img {
+        width: 120px;
+        height: 50px;
+        object-fit: cover;
+        
+    }
+    .screen__title {
+        font-size: 20px;
+    }
+    .screen__text {
+        font-size: 16px;
+    }
+    h1{
+        font-size: 30px;
+    }
+    .heading__text span {
+        font-size: 25px;
+    }
+} 

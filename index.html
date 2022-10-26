@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GSAP</title>
+    <link rel="stylesheet" href="./style//style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="wrapper">
+        <main class="page">
+            <div class="page__wrapper">
+
+                <div class="page__screen screen">
+            
+                    <div class="screen__body">
+                        <h1 class="screen__title screen__title_bg1">See the world from one place</h1>
+
+                        <div class="screen__image">
+                            <video loop=""  id="videoID" muted="true" autoplay=""  poster=""  class="fullscreen-bg__video">
+                                <source src="./assets/video/background.mp4" type="video/mp4">
+                                <source src="video/plane.webm" type="video/webm">
+                            </video>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="page__screen screen">
+               
+                    <div class="screen__body">
+                        <h1 class="screen__title screen__title_bg2">Discover something new</h1>
+
+                        <div class="screen__image">
+                            <video loop="" id="videoID2" muted="true" autoplay="" poster=""  class="fullscreen-bg__video">
+                                <source src="./assets/video/hameleon.mp4" type="video/mp4">
+                                <source src="video/plane.webm" type="video/webm">
+                            </video>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="page__screen screen">
+         
+                    <div class="screen__body">
+                        <h1 class="screen__title screen__title_bg3">Inspired waterfront living</h1>
+
+                        <div class="screen__image">
+                            <video loop=""  id="videoID3" muted="true"  autoplay="" poster=""  class="fullscreen-bg__video">
+                                <source src="./assets/video/eggs.mp4" type="video/mp4">
+                                <source src="video/plane.webm" type="video/webm">
+                            </video>
+                        </div>
+                    </div>
+                </div>
+               
+
+            </div>
+            <div class="page__pagination"></div>
+            <div class="page__scroll"></div>
+        </main>
+    </div>
+   
+    <div class="main">
+        <div class="heading">
+            <div class="heading__text">
+                <span id="create" class="center_text_invisible">What if you can collect all</span>
+            </div>
+            <div class="heading__text">
+                <span id="create" class="center_text"><b class="experiences">experiences of</b> 
+                    <div class="heading__text__invise">
+
+                        <div class="heading__text heading__text__block" style="overflow:hidden;">
+                            <div class="center__text list_text1">Relaxation</div>
+                            <div class="center__text list_text2">Holiday life</div>
+                            <div class="center__text list_text3">Adventure</div>
+                            <div class="center__text list_text4">Lifestyle</div>
+                        </div>
+        
+                    </div>
+                </span>
+
+               
+
+                <div class="videoPlay"><img  src="./assets/img/logo.png"/></div>
+            </div>
+            <div class="heading__text invisible"><span id="create" class="center_text-second">all in</span></div>
+            <div class="heading__text">
+                <span id="create" class="center_text_invisible">Mediterranean life in one place?</span>
+            </div>
+        </div>
+    </div>
+    <!-- <section></section> -->
+
+    <!-- <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script> -->
+    <script src="./JS//Slider.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+
+    <script>
+        let tl = gsap.timeline({defaults: {ease: "SlowMo.easeOut"}})
+
+        tl.to("#create", {y:'0%', duration: 0.7, stagger: 0.2})
+        tl.to('.center_text_invisible',{opacity: 0, duration: 0.7})
+        tl.to('.experiences',{x:'-80px', duration: 0.5, position: "absolute"})
+        tl.to('.heading__text__invise',{display:"inline-flex", flexDirection:"column", alignItems: "center", transition:"2s ease"})
+        tl.to('.heading__text',{overflow:"hidden"})
+
+      
+        tl.to('.list_text1', {display:"block",opacity: 1, duration: 0.6, y:"0"})
+        tl.to('.list_text1', {display:"block",opacity: 1, duration: 0.6, y:"-125%"})
+        tl.to('.list_text2', {display:"block",opacity: 1, duration: 0.6, y:"0"})
+        tl.to('.list_text2', {display:"block",opacity: 1, duration: 0.6, y:"-125%"})
+        tl.to('.list_text3', {display:"block",opacity: 1, duration: 0.6, y:"0"})
+        tl.to('.list_text3', {display:"block",opacity: 1, duration: 0.6, y:"-125%"})
+        tl.to('.list_text4', {display:"block",opacity: 1, duration: 0.6, y:"0"})
+
+
+        tl.to('.center_text', {y: '-120%', duration: 0.7})
+        tl.to('.invisible', {display:"block",y: '-100%', duration: 0.7})
+        tl.to('.invisible', {display:"block", opacity: 0,y: '-100%', duration: 0.7})
+        tl.to('.center_text',{x:'0px', duration: 0.5})
+        tl.to('.videoPlay',{display:"block", duration: 0.2})
+        tl.to('.main',{width:"30%", duration: 0.7}).from('.center_text', {x:'0px', duration:0.3, delay: 0})
+        tl.to('.main', {x:'-100%' , duration: 0.3, opacity: 1})
+        tl.fromTo('.screen__title_bg1',{opacity: 0}, {opacity: 1, delay: '0.2'})
+        tl.fromTo('.screen__title_bg2',{opacity: 0}, {opacity: 1, delay: '1.2'})
+        tl.fromTo('.screen__title_bg3',{opacity: 0}, {opacity: 1, delay: '1.2'})
+
+    </script>
+    <script src="./JS/App.js"></script>
+
+    
+</body>
+</html>
